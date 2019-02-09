@@ -1,0 +1,40 @@
+<ion-card>
+<ion-card-content center text-center class="login-content" padding>
+  <ion-row class="logo-row">
+     <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="assets/logo.svg"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+    <form (ngSubmit)="toReg(form)" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input type="text" placeholder="First Name" name="firstname" [(ngModel)]="firstname" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Last Name" name="lastname" [(ngModel)]="lastname" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="password" required></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" type="submit" block [disabled]="!registerForm.form.valid" routerLink="/tabs/tab2" (click)="clear()" >Save Register</ion-button>
+           <ion-button color="light" type="button" value="Reload Page" onClick="document.location.reload(true)">RESET</ion-button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+</ion-card-content>
+</ion-card>

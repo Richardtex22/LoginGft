@@ -1,0 +1,45 @@
+
+<ion-card center text-center padding>
+<ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="assets/logo.svg"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <ion-toolbar>
+    <ion-card-subtitle color="secondary">Bienvenido {{user.firstname}} {{user.lastname}}</ion-card-subtitle><br>
+    <ion-card-content >Usuario: {{user.email}}</ion-card-content>
+  </ion-toolbar>
+
+	    <ion-row center text-center>
+			<ion-col>
+	          		<ion-button (click)="verCuentas()">Solicitar Nueva Cuenta</ion-button><br><br>
+				     <div *ngIf="mostrarCuentas === true"> 
+				     <ion-list-header >Selecciona un tipo de tarjeta</ion-list-header>
+				      <form>
+				      <ion-list>
+				      <ion-item>
+				      	<ion-label>Tipos de Tarjeta</ion-label>
+					    <ion-select placeholder="Select One" Id="tarjeta">
+					      <div >
+					      <ion-select-option *ngFor="let item of cardCero" name="TDC" type="text">{{item.name}} 
+					      <label id="type" value="tipo" name="tipo">{{item.type}}</label>
+					      </ion-select-option>
+					      <!--ion-select-option value="TDD" type="text">{{item.name}}
+					      </ion-select-option-->
+					  </div>
+					      </ion-select>
+					</ion-item>
+					</ion-list>
+				</form>
+				</div>
+				<ion-button *ngIf="mostrarCuentas === true" type="submit" (click)="ngClick()">Confirmar</ion-button>
+		    	<ion-button *ngIf="mostrarBoton === true" type="submit" (click)="newAccount()">Enviar</ion-button><br>    
+		    </ion-col>
+	    </ion-row>
+	    <ion-button color="danger" size="small" routerLink="/tabs/tab2" (click)="logOut()" value="Reload Page" onClick="document.location.reload(true)">logout</ion-button>
+
+
+
+     
