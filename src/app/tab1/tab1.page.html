@@ -14,6 +14,7 @@
 
 	    <ion-row center text-center>
 			<ion-col>
+	          	<ion-button (click)="misCuentas()">Mi Cuenta</ion-button>
 	          		<ion-button (click)="verCuentas()">Solicitar Nueva Cuenta</ion-button><br><br>
 				     <div *ngIf="mostrarCuentas === true"> 
 				     <ion-list-header >Selecciona un tipo de tarjeta</ion-list-header>
@@ -21,15 +22,13 @@
 				      <ion-list>
 				      <ion-item>
 				      	<ion-label>Tipos de Tarjeta</ion-label>
-					    <ion-select placeholder="Select One" Id="tarjeta">
+					    <ion-select placeholder="Select One" Id="tarjeta" value="tarjeta">
 					      <div >
-					      <ion-select-option *ngFor="let item of cardCero" name="TDC" type="text">{{item.name}} 
-					      <label id="type" value="tipo" name="tipo">{{item.type}}</label>
-					      </ion-select-option>
-					      <!--ion-select-option value="TDD" type="text">{{item.name}}
-					      </ion-select-option-->
-					  </div>
-					      </ion-select>
+						      <ion-select-option *ngFor="let item of cardCero" name="Tarjeta" type="text">{{item.name}} 
+						      <label id="type" value="tipo" name="TDC">{{item.type}}</label>
+						      </ion-select-option>
+					  		</div>
+					    </ion-select>
 					</ion-item>
 					</ion-list>
 				</form>
