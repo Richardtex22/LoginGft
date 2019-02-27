@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
-import * as nJwt from 'njwt';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router'
 
